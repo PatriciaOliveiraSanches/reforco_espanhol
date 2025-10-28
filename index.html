@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retorço Escolar de Espanhol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+        .teacher-info {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 0 20px 50px;
+        }
+        
+        .image-container {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Retorço Escolar de Espanhol</h1>
+        <h2>A melhor opção para você deslanchar no idioma!</h2>
+        
+        <div class="teacher-info">
+            <p>Aprenda espanhol com quem realmente entende de educação, idiomas e desenvolvimento humano. A professora Patrícia Sanches tem mais de 20 anos de experiência no ensino de espanhol, combinados com formação em Psicologia, Psicopedagogia e Neurociências para uma aprendizagem eficaz.</p>
+        </div>
+    </div>
+    
+    <div class="gallery">
+        <div class="image-container">
+            <img src="imagens/1_Reforco-Escolar-de-Espanhol-A-melhor-opcao-para-voce-deslanchar-no-idioma.png" alt="Imagem 1">
+        </div>
+        <div class="image-container">
+            <img src="imagens/2_Por-Que-Escolher-Nossa-Professora-de-Espanhol.png" alt="Imagem 2">
+        </div>
+        <div class="image-container">
+            <img src="imagens/3_Aulas-Personalizadas-para-Todos-os-Niveis.png" alt="imagens 3">
+        </div>
+        <div class="image-container">
+            <img src="imagens/4_Modalidades-Flexiveis-Online-e-Presencial.png" alt="imagens 4">
+        </div>
+        <div class="image-container">
+            <img src="imagens/5_Metodologia-Integrada-e-Inovadora.png" alt="imagens 5">
+        </div>
+        <div class="image-container">
+            <img src="imagens/6_Beneficios-do-Reforco-Escolar-em-Espanhol.png" alt="imagens 6">
+        </div>
+        <div class="image-container">
+            <img src="imagens/7_Como-Funciona-o-Processo-de-Contratacao-do-Servico.png" alt="imagens 7">
+        </div>
+        <div class="image-container">
+            <img src="imagens/8_Investimento-e-Condicoes.png" alt="imagens 8">
+        </div>
+        <div class="image-container">
+            <img src="imagens/9_Comece-Hoje-a-Transformar-Seu-Espanhol.png" alt="Imagem 9">
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        Role para ver todas as imagens
+    </div>
+
+    <script>
+        // Adicionar um efeito sutil de fade-in quando as imagens entram na tela
+        const imageContainers = document.querySelectorAll('.image-container');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        imageContainers.forEach(container => {
+            container.style.opacity = 0;
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(container);
+        });
+    </script>
+</body>
+</html>
